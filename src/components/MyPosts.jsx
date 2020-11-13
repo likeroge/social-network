@@ -12,9 +12,12 @@ const Styled = styled.div`
   }
   ${tw`text-xl`}
   .btn-add {
+    margin-top: 10px;
     ${tw`bg-blue-500 inline-block p-2 px-2 hover:bg-blue-700 font-bold shadow-2xl outline-none rounded`}
   }
   .btn-clear {
+    margin-top: 10px;
+    margin-left: 10px;
     ${tw`bg-red-500 inline-block p-2 px-6 hover:bg-red-700 font-bold shadow-2xl outline-none rounded`}
   }
 `;

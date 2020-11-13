@@ -14,7 +14,7 @@ const Styled = styled.div`
 
   }
 
-  .dialog.active{
+  .active{
     color: gold;
   }
 
@@ -25,34 +25,53 @@ const Styled = styled.div`
   .messages .message{
 
   }
-
 `
 
+const DialogItem = ({name,id}) => {
+  let path = '/dialogs/'+ id
+  return (
+    <div className="dialog">
+    <NavLink activeClassName='active' to={path}>{name}</NavLink>
+  </div>
+  )
+}
+
+const Message = ({message}) =>{
+  return(
+  <div className="message">{message}</div>
+  )
+}
+
 export const Dialogs = (props) => {
-    
+  
+  let dialogsData = [
+    {id:1, name:'Egor'},
+    {id:2, name:'Alex'},
+    {id:3, name:'Roma'},
+    {id:4, name:'Max'},
+    {id:5, name:'Yellow'},
+  ]
+
+  let messagesData = [
+    {id: 1, message: 'Hi'}
+  ]
+
   return (
     <Styled>
       <div className="dialogs-items">
-        <div className="dialog active">
-          <NavLink to='/dialogs/1'>Egor</NavLink>
-        </div>
-        <div className="dialog">
-          <NavLink to='/dialogs/2'>Max</NavLink> 
-        </div>
-        <div className="dialog">
-          <NavLink to='/dialogs/3'>Alex</NavLink>
-        </div>
-        <div className="dialog">
-          <NavLink to='/dialogs/4'>Yellow</NavLink>
-        </div>
-        <div className="dialog">
-          <NavLink to='/dialogs/5'>Roma</NavLink>
-        </div>
+        <DialogItem name='Egor' id='1'/>
+        <DialogItem name='Alex' id='2'/>
+        <DialogItem name='Max' id='3'/>
+        <DialogItem name='Roma' id='4'/>
+        <DialogItem name='Yello' id='5'/>
+        <DialogItem name='Yello' id='5'/>
+        <DialogItem name='Yello' id='5'/>
+        
       </div>
       <div className='messages'>
-        <div className="message">Hi</div>
-        <div className="message">How are you?</div>
-        <div className="message">Hello World!!!</div>
+        <Message message='Hello my dear Friend'/>
+        <Message message='Hello World!!!!!'/>
+        <Message message='How are you bro)'/>
       </div>
     </Styled>
   );
